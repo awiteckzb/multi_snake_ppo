@@ -1,0 +1,29 @@
+environment:
+    grid_size: 10
+    max_steps: 100
+    reward_food: 1.0
+    reward_death: -1.0
+
+ppo:
+    learning_rate: 3.0e-4
+    n_steps: 2048
+    batch_size: 64
+    n_epochs: 10
+    n_actors: 8
+    gamma: 0.99
+    gae_lambda: 0.95
+    clip_epsilon: 0.2
+    c1: 1.0 # Value loss coefficient
+    c2: 0.01 # Entropy coefficient
+    max_grad_norm: 0.5
+
+training:
+    total_iterations: 1000
+    save_frequency: 100
+    eval_frequency: 50
+    checkpoint_dir: "checkpoints"
+    log_dir: "logs"
+
+network:
+    cnn_channels: [32, 64]
+    hidden_size: 256
