@@ -4,7 +4,7 @@ This repo contains an implementation of a Snake RL Agent with PPO (coded up the 
 
 I mainly did this just so I can get a better understanding of how PPO works at a technical level. Nothing super groundbreaking in this repo but it may be a good resource for someone looking to implement PPO from scratch.
 
-If you wanna talk about RL/collab on a project, feel free to reach out to me on [X](https://x.com/aidanwiteck). 
+If you wanna talk about RL/collab on a project, reach out to me on [X](https://x.com/aidanwiteck). 
 
 ## Usage
 
