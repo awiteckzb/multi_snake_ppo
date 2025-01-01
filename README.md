@@ -1,6 +1,6 @@
 # Implementing PPO from scratch for Snake
 
-This repo contains an implementation of a Snake RL Agent with PPO (coded up the algorithm from scratch).
+This repo contains an implementation of a Snake RL Agent with PPO (coded up the algorithm from scratch). I tried to implement this exactly according to the [original paper](https://arxiv.org/abs/1707.06347). 
 
 I mainly did this just so I can get a better understanding of how PPO works at a technical level. Nothing super groundbreaking in this repo but it may be a good resource for someone looking to implement PPO from scratch.
 
