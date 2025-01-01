@@ -1,0 +1,5 @@
+gymnasium==1.0.0
+numpy==1.21.6
+PyYAML==6.0.2
+stable_baselines3==2.4.0
+torch==1.13.1

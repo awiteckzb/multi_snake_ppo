@@ -141,3 +141,31 @@ class ActorCritic(nn.Module):
         action_log_prob = dist.log_prob(action)
 
         return (action.item(), value.item(), action_log_prob.item())
+
+    def act_vectorized(
+        self, states: torch.Tensor
+    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+        """Choose actions for multiple states at once."""
+        # print(
+        #     f"States shape in act_vectorized: {states.shape}"
+        # )  # Should be (n_envs, channels, height, width)
+
+        # Get action probabilities and values
+        action_probs, values = self(states)
+        # print(
+        #     f"Action probs shape: {action_probs.shape}"
+        # )  # Should be (n_envs, n_actions)
+        # print(f"Values shape: {values.shape}")  # Should be (n_envs, 1)
+
+        # Sample actions from the distributions
+        dist = Categorical(action_probs)
+        actions = dist.sample()
+        # print(f"Actions shape: {actions.shape}")  # Should be (n_envs,)
+        log_probs = dist.log_prob(actions)
+        # print(f"Log probs shape: {log_probs.shape}")  # Should be (n_envs,)
+
+        return (
+            actions.cpu().numpy(),
+            values.squeeze().cpu().numpy(),
+            log_probs.cpu().numpy(),
+        )

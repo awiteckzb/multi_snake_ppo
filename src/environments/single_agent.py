@@ -71,7 +71,7 @@ class SnakeEnv(gym.Env):
 
         # Check if game is over (wall collision or self collision)
         if self._is_collision(new_head):
-            return self._get_obs(), -1.0, True, False, {"reason": "collision"}
+            return self._get_obs(), -5.0, True, False, {"reason": "collision"}
 
         # Move snake
         self.snake.insert(0, new_head)
